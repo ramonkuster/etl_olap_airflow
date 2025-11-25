@@ -162,10 +162,9 @@ services:
       airflow-init:
         condition: service_completed_successfully
       dw-postgres:
-        condition: service_healthy # Adicionando dependência
+        condition: service_healthy 
       oltp-postgres:
-        condition: service_healthy # Adicionando dependência
-
+        condition: service_healthy 
   airflow-scheduler:
     <<: *airflow-common
     command: scheduler
@@ -181,9 +180,9 @@ services:
       airflow-init:
         condition: service_completed_successfully
       dw-postgres:
-        condition: service_healthy # Adicionando dependência
+        condition: service_healthy
       oltp-postgres:
-        condition: service_healthy # Adicionando dependência
+        condition: service_healthy 
 
   airflow-worker:
     <<: *airflow-common
@@ -208,9 +207,9 @@ services:
       airflow-init:
         condition: service_completed_successfully
       dw-postgres:
-        condition: service_healthy # Adicionando dependência
+        condition: service_healthy
       oltp-postgres:
-        condition: service_healthy # Adicionando dependência
+        condition: service_healthy 
 
   airflow-triggerer:
     <<: *airflow-common
@@ -227,9 +226,9 @@ services:
       airflow-init:
         condition: service_completed_successfully
       dw-postgres:
-        condition: service_healthy # Adicionando dependência
+        condition: service_healthy 
       oltp-postgres:
-        condition: service_healthy # Adicionando dependência
+        condition: service_healthy 
 
   airflow-init:
     <<: *airflow-common
@@ -344,9 +343,9 @@ services:
       airflow-init:
         condition: service_completed_successfully
       dw-postgres:
-        condition: service_healthy # Adicionando dependência
+        condition: service_healthy 
       oltp-postgres:
-        condition: service_healthy # Adicionando dependência
+        condition: service_healthy 
 
          # -----------------------------------------------------
   # 5. OLTP SOURCE DATABASE (OLTP - Novo Serviço)
@@ -374,4 +373,4 @@ services:
 volumes:
   postgres-db-volume:
   dw-postgres-volume: 
-  oltp-postgres-volume: # <-- NOVO VOLUME PARA O BANCO OLTP
+  oltp-postgres-volume: 
